@@ -23,7 +23,7 @@ select DISTINCT last_name FROM actor;
 Question 12: (come back if time)
 select last_name, COUNT(last_name) AS Total FROM actor GROUP BY last_name ORDER BY Total DESC;
 Question 13:
-
+select fa.actor_id, COUNT(f.film_id) FROM film f JOIN film_actor fa ON fa.film_id = f.film_id GROUP BY fa.actor_id;
 Question 14:
 select i.store_id, f.title FROM inventory i JOIN film f ON i.film_id = f.film_id WHERE i.store_id = 1 AND f.title = "Academy Dinosaur";
 Question 15:
@@ -42,17 +42,26 @@ Question 21:
 select title, category FROM film_list WHERE category = "Horror";
 Question 22:
 select staff_id, first_name, last_name, CONCAT(first_name,' ', last_name) FROM staff WHERE staff_id = 1;
-Question 23: (come back later)
-
-Question 24:(comeback later)
-
+Question 23: 
+select actor_id,first_name, last_name FROM actor WHERE first_name = "Fred"; (to get his ID)
+select f.title, fa.actor_id FROM film_actor fa JOIN film f ON fa.film_id = f.film_id WHERE fa.actor_id = 16;
+Question 24:
+select film_id FROM film WHERE title = "BUCKET BROTHERHOOD"; (to get the film id)
+Cannot find stock quantity....
 Question 25:
 select DISTINCT country_id,country FROM country;
 select DISTINCT name, language_id FROM language ORDER BY name ASC;
 Question 26:
 select first_name, last_name FROM customer WHERE last_name LIKE "%son%" ORDER BY first_name;
-Question 27:
+Question 27:(didnt have time to create table but would have used this)
+select category_id, COUNT(film_id) FROM film_category GROUP BY category_id;
+Question 28: (this will help find 29) didnt have time to create new tables but would have used this 
+select fa.actor_id, COUNT(f.film_id) AS Total FROM film f JOIN film_actor fa ON fa.film_id = f.film_id GROUP BY fa.actor_id ORDER BY Total ASC;
+Question 29: 
+select actor_id, first_name, last_name FROM actor WHERE actor_id = 107;
+(GINA)
 
-Question 28:
+IF I had more time for question 7 i would have created the table or a new list to implement the category keys and number of films. then linked it to category to ensure that the names of the category is shown.
 
-Question 29:
+For question 8 I would create a table or a new list, and used the code shown above.
+
